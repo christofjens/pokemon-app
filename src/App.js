@@ -3,17 +3,12 @@ import Card from './Card'
 import pokemons from './data.json'
 
 export default function App() {
-  //  const firstPokemon = pokemons[0]     --- folgend die saubere Variante
-  const { name, images, types } = pokemons[0]
-
   return (
     <div className="App">
-      <Card
-        name={name}
-        frontImage={images.front}
-        backImage={images.back}
-        types={types}
-      />
+      {pokemons.map(pokemon => {
+        const { name, images, types, id } = pokemon
+        return <Card key={id} name={name} images={images} types={types} />
+      })}
     </div>
   )
 }

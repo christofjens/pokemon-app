@@ -5,8 +5,6 @@
   border-radius: 7px;
 }
 
-.Card__header {
-  display: flex;
-  flex-wrap: wrap;
-  align-content: space-around;
+.Card > ul {
+  list-style: none;
 }

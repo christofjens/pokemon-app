@@ -1,30 +1,21 @@
 import './Card.css'
 
-export default function Card({ name, frontImage, backImage, types }) {
+export default function Card({ name, images, types }) {
   return (
     <section className="Card">
-      <header className="Card__header">
+      <header>
         <h2>{name.toUpperCase()}</h2>
-        <div className="Card__image-container">
-          <img src={frontImage} alt="" />
-          <img src={backImage} alt="" />
-        </div>
+        <img src={images.front} alt="" />
+        <img src={images.back} alt="" />
       </header>
       <main>
         Type(s):{' '}
         <ul>
-          <li>{types[0]}</li>
-          <li>{types[1]}</li>
+          {types.map(type => (
+            <li key={type}>{type}</li>
+          ))}
         </ul>
       </main>
     </section>
   )
 }
-
-// function splitTypes(typesToSplit, separator) {
-//   const arrayOfTypes = typesToSplit.split(separator)
-// }
-
-// const separator = ', '
-
-// splitTypes(arrayOfTypes, separator)
